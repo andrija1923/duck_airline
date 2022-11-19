@@ -10,6 +10,7 @@ struct Location
 
 impl Location
 {
+    //Constructs Location struct
     fn new(name: String, latitude: f64, longitude: f64 ) -> Location
     {
         Location
@@ -28,11 +29,13 @@ struct Route
 
 impl Route
 {
+    //Add location to routes
     fn insert_location(&mut self, loc: Location)
     {
         self.routes.push(loc);
     }
 
+    //Calculate total distance from routes
     fn calculate_distance(&self) -> f64
     {
         const EARTH_RADIUS_IN_KILOMETERS: f64 = 6371.0;
