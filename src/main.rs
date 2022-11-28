@@ -80,11 +80,12 @@ impl Route
     }
 }
 
-fn main() {
+fn fill_in_routes()->Route
+{
     let mut route = Route{
         routes: Vec::new()
     };
-    
+
     route.insert_location(Location::new(String::from("KCLE" ), 41.4075, -81.851111));
     route.insert_location(Location::new(String::from("LEYIR"), 41.51030, -83.88080));
     route.insert_location(Location::new(String::from("PIONS"), 41.65390, -84.48190));
@@ -106,7 +107,12 @@ fn main() {
     route.insert_location(Location::new(String::from("PUDVY"), 41.5427, -109.34200));
     route.insert_location(Location::new(String::from("WEGEM"), 41.44560, -109.9900));
     route.insert_location(Location::new(String::from("KSLC" ), 40.78610, -111.9822));
-    
+
+    route
+}
+
+fn main() {
+    let route = fill_in_routes();
     
     let total_distance = route.calculate_distance();
 
